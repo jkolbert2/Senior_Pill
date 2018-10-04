@@ -1,0 +1,41 @@
+<div class="main">
+  <div class="container">
+    <h1>
+      <%= image_tag("pills.png", height: "235", width: "300") %>
+      <br>
+      Pill Project
+    </h1>
+    <table> 
+    <thead>
+      <tr>
+      <th> Date </th>
+      <th> Name </th>
+      <th> Drug </th>
+      <th> Purpose </th>
+      <th> Amount </th>
+      </tr>
+    </thead>
+    <tbody>
+       <% @reminders.each do |drug| %>
+       <tr>
+          <td> <%= drug.Date %> </td>
+          <td> <%= link_to(drug.Name, reminder_path(drug.id)) %> </td>
+          <td> <%= drug.Drug %> </td>
+          <td> <%= drug.Purpose %> </td>
+          <td> <%= drug.Amount %> </td>
+          
+        </tr>
+        <%end%>
+    </tbody>
+    </table>
+    <br>
+    <br>
+    <div class="button">
+      <%= button_to "New Reminder", { :action => "new" }, :method => :get %>
+      <!-- Commmenttttt -->
+      <!-- <%= label(:id, "ID #") %> <%= text_field(:reminder, :id, size: 20) %> -->
+    </div>
+    
+    
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class= "form">
+<%= form_for @reminder do |f| %>
+
+<%= f.label :Date, "Date" %>
+<%= f.text_field :Date %>
+
+<%= f.label :Name, "Name" %>
+<%= f.text_field :Name %>
+
+<%= f.label :Drug, "Drug" %>
+<%= f.text_field :Drug %>
+
+<%= f.label :Amount, "Amount" %>
+<%= f.text_field :Amount %>
+
+<%= f.label :Purpose, "Purpose" %>
+<%= f.text_field :Purpose %>
+
+<%= f.submit %>
+<%end%>
+</div>
+<div class="button">
+  <%= button_to "Return to Index", { :action => "index" }, :method => :get %>  
+</div>
+
+
+
+
