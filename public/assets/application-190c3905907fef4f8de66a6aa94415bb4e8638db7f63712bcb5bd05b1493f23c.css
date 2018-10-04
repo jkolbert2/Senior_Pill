@@ -1,0 +1,104 @@
+/* line 5, /home/ubuntu/workspace/app/assets/stylesheets/reminder.scss */
+h1 {
+  color: #ff9900;
+  text-align: center;
+}
+
+/* line 10, /home/ubuntu/workspace/app/assets/stylesheets/reminder.scss */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* line 14, /home/ubuntu/workspace/app/assets/stylesheets/reminder.scss */
+table, th, td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+/* line 19, /home/ubuntu/workspace/app/assets/stylesheets/reminder.scss */
+input[type=text], select, textarea {
+  width: 25%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* line 27, /home/ubuntu/workspace/app/assets/stylesheets/reminder.scss */
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* line 37, /home/ubuntu/workspace/app/assets/stylesheets/reminder.scss */
+input[type=submit] {
+  width: 100%;
+  background-color: #33ccff;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* line 48, /home/ubuntu/workspace/app/assets/stylesheets/reminder.scss */
+input[type=submit]:hover {
+  background-color: #0099cc;
+}
+
+/* line 52, /home/ubuntu/workspace/app/assets/stylesheets/reminder.scss */
+.form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 25%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* line 63, /home/ubuntu/workspace/app/assets/stylesheets/reminder.scss */
+.button {
+  text-align: center;
+  color: white;
+  width: 25%;
+  margin: auto;
+}
+
+/* line 70, /home/ubuntu/workspace/app/assets/stylesheets/reminder.scss */
+.button2 {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 25%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  text-align: center;
+  color: white;
+  width: 25%;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
