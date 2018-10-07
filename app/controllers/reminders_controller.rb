@@ -1,7 +1,7 @@
 class RemindersController < ApplicationController
     
     def index
-        @reminders = Reminder.all #.where("Name" => "Jackie")
+        @reminders = Reminder.where("Name" => "Jackie")
     end
     
     def new
