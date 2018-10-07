@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180925001403) do
+ActiveRecord::Schema.define(version: 20181007203759) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "reminder", force: :cascade do |t|
+    t.string   "Date"
+    t.string   "Name"
+    t.string   "Drug"
+    t.string   "Purpose"
+    t.string   "Amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "reminders", force: :cascade do |t|
     t.string   "Date"
