@@ -12,9 +12,9 @@ class MessageTest < ActiveSupport::TestCase
 
   test 'should be valid when all attributes are set' do
     attrs = { 
-      name: 'caroline',
-      email: 'caroline@example.org',
-      body: 'kthnxbai'
+      name: 'carolinehixon',
+      email: 'carolinehixon@example.org',
+      body: 'password'
     }
 
     msg = Message.new attrs
