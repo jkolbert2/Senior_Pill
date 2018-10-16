@@ -23,6 +23,6 @@
 <div class="button">
      <%= button_to "Edit Reminder", { :action => "edit" }, :method => :get %>
      <%= button_to "Return to index", { :action => "index" }, :method => :get %>
-     <%= button_to "Send Reminder", { :method => :reminder_mailer.with(reminder: @reminder).reminder_email} %> 
+     <%= button_to "Send Reminder", { :action => "reminder_email"}, :method => :get %> 
 </div>
 
