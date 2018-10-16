@@ -23,6 +23,6 @@
 <div class="button">
      <%= button_to "Edit Reminder", { :action => "edit" }, :method => :get %>
      <%= button_to "Return to index", { :action => "index" }, :method => :get %>
-     <%= button_to "Send Reminder", { :action => "reminder_email"}, :method => :get %> 
+     <%= link_to "Send Reminder", :controller => "reminder_mailer", :action => "reminder_email", :id => @reminder.id %>
 </div>
 
