@@ -1,6 +1,6 @@
-class CreateReminders < ActiveRecord::Migration
+class Reminders < ActiveRecord::Migration[5.0]
   def change
-    create_table :reminder do |t|
+    create_table :reminders do |t|
       t.string 'Date'
       t.string 'Name'
       t.string 'Drug'
