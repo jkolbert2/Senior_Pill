@@ -20,9 +20,9 @@
         </tr>
     </tbody>
 </table>
+link_to "send reminder", send_reminder_path, class: "big-button" 
 <div class="button">
      <%= button_to "Edit Reminder", { :action => "edit" }, :method => :get %>
      <%= button_to "Return to index", { :action => "index" }, :method => :get %>
-     <%= link_to "send reminder", :controller => "reminders", :action => "send_reminder", :id => @reminder.id %>
 </div>
 
