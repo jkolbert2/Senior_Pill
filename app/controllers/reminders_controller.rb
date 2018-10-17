@@ -28,7 +28,7 @@ class RemindersController < ApplicationController
     
     private
     
-    def send_reminder()
+    def send_reminder
         @reminder = Reminder.find(params[:id])
         
         reminder_mailer.reminder_email(@reminder)
