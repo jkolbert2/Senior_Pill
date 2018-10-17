@@ -28,7 +28,7 @@ class RemindersController < ApplicationController
     def send_reminder
         @reminder = Reminder.find(params[:id])
         
-        reminder_mailer.reminder_email(@reminder).deliver
+        ReminderMailer.reminder_email(@reminder).deliver
         flash[:notice] = "Reminder has been send"
     end
     private
