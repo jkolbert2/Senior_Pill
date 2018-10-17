@@ -25,7 +25,12 @@ class RemindersController < ApplicationController
         @reminder.update_attributes!(reminder_params)
         redirect_to reminders_path
     end
-    
+    def send_reminder
+        @reminder = Reminder.find(params[:id])
+        
+        ReminderMailer.reminder_email(@reminder).deliver
+        flash[:notice] = "Reminder has been send"
+    end
     private
     
     def reminder_params

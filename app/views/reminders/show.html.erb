@@ -6,6 +6,7 @@
         <th> Drug </th>
         <th> Purpose </th>
         <th> Amount </th>
+        <th> Email </th>
         </tr>   
     </thead>
     <tbody>
@@ -19,6 +20,7 @@
         </tr>
     </tbody>
 </table>
+<%= link_to "Send Reminder by email", :controller => "reminders", :action => "send_reminder", :id => @reminder.id %>
 <div class="button">
      <%= button_to "Edit Reminder", { :action => "edit" }, :method => :get %>
      <%= button_to "Return to index", { :action => "index" }, :method => :get %>
