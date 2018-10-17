@@ -1,4 +1,5 @@
 class ReminderMailer < ApplicationMailer
+    
     default from: 'donotreply@pillproject.com'
     def reminder_email(reminder)
         @reminder = reminder
