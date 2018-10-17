@@ -37,6 +37,8 @@ class RemindersController < ApplicationController
         
         ReminderMailer.reminder_email(@reminder).deliver
         flash[:notice] = "Reminder has been send"
+        
+        redirect_to reminders_path
     end
     
     private
