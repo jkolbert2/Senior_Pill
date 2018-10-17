@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <%= link_to "reminder_mailer", :controller => "reminder_mailer", :action => "reminder_email", :id => @reminder.id %>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to example.com, <%= @reminder.name %></h1>
+    <p>
+      You have successfully signed up to example.com,
+      you need to take: <%= @reminder.Drug %>.<br>
+    </p>
+    <p>
+      You need to take <%= @reminder.Amount %>.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
