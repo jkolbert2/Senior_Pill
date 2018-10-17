@@ -28,6 +28,13 @@ class RemindersController < ApplicationController
     
     private
     
+    def send_reminder()
+        @reminder = Reminder.find(params[:id])
+        
+        reminder_mailer.reminder_email(@reminder).deliver
+        flash[:notice] = "Reminder has been send"
+    end
+    
     def reminder_params
         params.require(:reminder)
         params.require(:reminder).permit(:Date,:Name,:Drug,:Amount,:Purpose,:Email)
