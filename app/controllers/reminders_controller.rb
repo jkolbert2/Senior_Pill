@@ -26,10 +26,25 @@ class RemindersController < ApplicationController
         redirect_to reminders_path
     end
     
+    def destroy
+        @reminder = Reminder.find params[:id]
+        @reminder.destroy
+        redirect_to reminders_path
+    end
+    
+    def send_reminder
+        @reminder = Reminder.find(params[:id])
+        
+        ReminderMailer.reminder_email(@reminder).deliver
+        flash[:notice] = "Reminder has been send"
+        
+        redirect_to reminders_path
+    end
+    
     private
     
     def reminder_params
         params.require(:reminder)
-        params.require(:reminder).permit(:Date,:Name,:Drug,:Amount,:Purpose)
+        params.require(:reminder).permit(:Date,:Name,:Drug,:Amount,:Purpose,:Email)
     end
 end
