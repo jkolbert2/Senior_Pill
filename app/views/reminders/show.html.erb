@@ -20,9 +20,9 @@
         </tr>
     </tbody>
 </table>
-<%= link_to "Send Reminder by email", :controller => "reminders", :action => "send_reminder", :id => @reminder.id %>
+
 <div class="button">
-     
+     <%= button_to "Send Email Reminder", {:action => "send_reminder"}, :method => :get %>
      <%= button_to "Edit Reminder", { :action => "edit" }, :method => :get %>
      <%= button_to "Delete Reminder", { :action => "destroy" }, :method => :delete %>
      <%= button_to "Return to index", { :action => "index" }, :method => :get %>

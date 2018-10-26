@@ -9,7 +9,7 @@ class RemindersController < ApplicationController
     end
     
     def create
-        @reminder = Reminder.create!(reminder_params)
+        @reminder = Reminder.create(reminder_params)
         redirect_to reminders_path
     end
     def show
