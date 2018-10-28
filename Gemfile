@@ -2,12 +2,10 @@ source 'https://rubygems.org'
 
 ruby '2.3.4'
 # Twilio allows us to use text messages for reminders
-<<<<<<< HEAD
 
-=======
 gem 'twilio-ruby'
-require 'twilio-ruby'
->>>>>>> 46a152dd21d51cd83df25dc0c1a4898bed63cd1d
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.0.1'
 # Use sqlite3 as the database for Active Record
