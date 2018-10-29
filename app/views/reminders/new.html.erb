@@ -1,4 +1,7 @@
-<div class= "form">
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6">
+<div class="form-group">
 <%= form_for @reminder do |f| %>
 
 <%= f.label :Date, "Date" %>
@@ -20,11 +23,17 @@
 <%= f.text_field :Email %>
 
 <%= f.submit %>
+<%= button_to "Return to Index", { :action => "index" }, :method => :get %> 
 <%end%>
 </div>
 <div class="button">
-  <%= button_to "Return to Index", { :action => "index" }, :method => :get %>  
+   
+</div>      
+  </div>
+  <div class="col-3"></div>
 </div>
+
+
 
 
 
