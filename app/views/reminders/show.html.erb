@@ -1,30 +1,40 @@
-<table>
-    <thead>
-        <tr>
-        <th> Date </th>
-        <th> Name </th>
-        <th> Drug </th>
-        <th> Purpose </th>
-        <th> Amount </th>
-        <th> Email </th>
-        </tr>   
-    </thead>
-    <tbody>
-        <tr>
-        <td><%=@reminder.Date %></td>
-        <td><%=@reminder.Name %></td>
-        <td><%=@reminder.Drug %></td>
-        <td><%=@reminder.Purpose %></td>
-        <td><%=@reminder.Amount %></td>
-        <td><%=@reminder.Email %></td>
-        </tr>
-    </tbody>
-</table>
-
-<div class="button">
-     <%= button_to "Send Email Reminder", {:action => "send_reminder"}, :method => :get %>
-     <%= button_to "Edit Reminder", { :action => "edit" }, :method => :get %>
-     <%= button_to "Delete Reminder", { :action => "destroy" }, :method => :delete %>
-     <%= button_to "Return to index", { :action => "index" }, :method => :get %>
+<div class="main">
+  <div class="container-fluid">
+      
+    <div class="row content">
+    <div class="col-sm-2 sidenav">
+    </div>
+    <div class="col-sm-8 text-center"> 
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+            <th> Date </th>
+            <th> Name </th>
+            <th> Drug </th>
+            <th> Purpose </th>
+            <th> Amount </th>
+            <th> Email </th>
+            </tr>   
+        </thead>
+        <tbody>
+            <tr>
+            <td><%=@reminder.Date %></td>
+            <td><%=@reminder.Name %></td>
+            <td><%=@reminder.Drug %></td>
+            <td><%=@reminder.Purpose %></td>
+            <td><%=@reminder.Amount %></td>
+            <td><%=@reminder.Email %></td>
+            </tr>
+        </tbody>
+    </table>
+            
+        <%= button_to "Send Email Reminder", {:action => "send_reminder"}, :method => :get, class: "btn btn-warning" %>
+        <%= button_to "Edit Reminder", { :action => "edit" }, :method => :get, class: "btn btn-warning" %>
+        <%= button_to "Delete Reminder", { :action => "destroy" }, :method => :delete, class: "btn btn-warning" %>
+        <%= button_to "Return to index", { :action => "index" }, :method => :get, class: "btn btn-warning" %>
+    
+    </div>
+    
+    <div class="col-sm-2 sidenav">
+    </div>
 </div>
-

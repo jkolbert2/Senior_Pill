@@ -1,28 +1,46 @@
-<div class= "form">
-<%= form_for @reminder do |f| %>
-
-<%= f.label :Date, "Date" %>
-<%= f.text_field :Date %>
-
-<%= f.label :Name, "Name" %>
-<%= f.text_field :Name %>
-
-<%= f.label :Drug, "Drug" %>
-<%= f.text_field :Drug %>
-
-<%= f.label :Amount, "Amount" %>
-<%= f.text_field :Amount %>
-
-<%= f.label :Purpose, "Purpose" %>
-<%= f.text_field :Purpose %>
-
-<%= f.label :Email, "Email" %>
-<%= f.text_field :Email %>
-
-<%= f.submit %>
-<%end%>
-</div>
-
-<div class="button">
-  <%= button_to "Return to Index", { :action => "index" }, :method => :get %>  
+<%= csrf_meta_tags %>
+<div class="container-fluid">
+  <div class="row content"> 
+    <div class="col-sm-4 sidenav">
+    </div>
+    <div class="col-sm-4 "> 
+        <%= form_for @reminder do |f| %>
+        <div class="form-group">
+          <%= f.label :Date %>
+          <%= f.text_field :Date, class:"form-control" %>
+        </div>  
+        
+        <div class="form-group">
+          <%= f.label :Name, "Name" %>
+          <%= f.text_field :Name, class:"form-control" %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :Drug, "Drug" %>
+          <%= f.text_field :Drug, class:"form-control" %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :Amount, "Amount" %>
+          <%= f.text_field :Amount, class:"form-control" %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :Purpose, "Purpose" %>
+          <%= f.text_field :Purpose, class:"form-control" %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :Email, "Email" %>
+          <%= f.text_field :Email, class:"form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.submit "Submit", class: "btn btn-default btn-warning btn-block" %>
+        </div>
+        
+        <div class="form-group">
+          <%end%>
+          <%= button_to "Return to Index", { :action => "index" }, :method => :get, class: "btn btn-block btn-warning" %> 
+        </div>
+    </div>
 </div>
