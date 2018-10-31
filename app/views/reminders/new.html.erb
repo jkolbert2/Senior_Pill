@@ -4,7 +4,7 @@
     <div class="col-sm-4 sidenav">
     </div>
     <div class="col-sm-4 "> 
-        <%= form_for @reminder do |f| %>
+        <%= form_for [@user, @reminder] do |f| %>
         <div class="form-group">
           <%= f.label :Date %>
           <%= f.text_field :Date, class:"form-control" %>

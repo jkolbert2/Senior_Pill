@@ -8,5 +8,6 @@ class Reminders < ActiveRecord::Migration[5.0]
       t.string 'Amount'
       t.timestamps null: false
     end
+    add_index :reminders, [:user_id, :created_at]
   end
 end

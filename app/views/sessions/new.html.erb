@@ -4,14 +4,9 @@
         </div>
         <div class="col-sm-4 "> 
         
-        <%= form_for(@user) do |f| %>
+        <%= form_for(:session, url: login_path) do |f| %>
         <div class="form-group">
-            User Sign Up!
-        </div>
-        
-        <div class="form-group">
-            <%= f.label :name %>
-            <%= f.text_field :name, class:"form-control"  %>
+            User Sign In!
         </div>
 
         <div class="form-group"> 
@@ -24,12 +19,9 @@
         <%= f.password_field :password, class:"form-control"  %>
         </div>
         
-        <div class="form-group">
-        <%= f.label :password_confirmation, "Confirmation" %>
-        <%= f.password_field :password_confirmation, class:"form-control"  %>
-        </div>
-        
-        <%= f.submit "Create my account", class: "btn btn-primary" %>
+        <%= f.submit "Log In", class: "btn btn-primary" %>
         <% end %>
+        
+        <p>New user? <%= link_to "Sign up now!", signup_path %></p>
     </div>
 </div>

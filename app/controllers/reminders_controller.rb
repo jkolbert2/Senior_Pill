@@ -1,16 +1,22 @@
 class RemindersController < ApplicationController
     
     def index
-        @reminders = Reminder.all #where("Name" => "Jackie")
+        @reminders = Reminder.all
     end
     
     def new
+        #@reminder = Reminder.new()
+        @user = User.find(params[:user_id])
         @reminder = Reminder.new()
     end
     
     def create
         @reminder = Reminder.create(reminder_params)
         redirect_to reminders_path
+        #@user = User.find(params[:user_id])
+        #@reminder = User.reminders.create(reminder_params)
+        #redirect_to "/users/#{user.id}"
+        
     end
     def show
         @reminder = Reminder.find(params[:id]);
