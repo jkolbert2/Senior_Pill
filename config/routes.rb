@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get '/send_reminder/:id', to: 'reminders#send_reminder', as: :send_reminder
+  
   get '/reminders', to: 'reminders#new'
+  get 'remindersindex',  to: 'reminders#index'
   
   root :to => redirect('pages/home')
   
