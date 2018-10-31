@@ -25,14 +25,16 @@
     </thead>
     <tbody>
        <% @reminders.each do |drug| %>
+         <% if drug != nil %>
        <tr>
           <td> <%= drug.Date %> </td>
-          <td> <%= link_to(drug.Name, reminder_path(drug.id)) %> </td>
+          <td> <%= link_to(drug.Name, user_reminders_path(drug.id)) %> </td>
           <td> <%= drug.Drug %> </td>
           <td> <%= drug.Purpose %> </td>
           <td> <%= drug.Amount %> </td>
           <td> <%= drug.Email %> </td>
         </tr>
+        <%end%>
         <%end%>
     </tbody>
     </table>

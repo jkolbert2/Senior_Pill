@@ -11,11 +11,11 @@ class RemindersController < ApplicationController
     end
     
     def create
-        @reminder = Reminder.create(reminder_params)
-        redirect_to reminders_path
-        #@user = User.find(params[:user_id])
-        #@reminder = User.reminders.create(reminder_params)
-        #redirect_to "/users/#{user.id}"
+        #@reminder = Reminder.create(reminder_params)
+        #redirect_to reminders_path
+        @user = User.find(params[:user_id])
+        @reminder = @user.reminders.create(reminder_params)
+        redirect_to "/users/#{@user.id}"
         
     end
     def show
