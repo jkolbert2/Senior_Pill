@@ -1,7 +1,7 @@
  
   
 Rails.application.routes.draw do
-  
+
  
   resources :users do
      resources :reminders
@@ -17,7 +17,14 @@ Rails.application.routes.draw do
   
   root :to => redirect('pages/home')
   
+  resource :messages do
+    collection do
+      post 'reply'
+    end
+  end
   
 end
 
-
+  
+  
+  
