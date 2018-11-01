@@ -4,7 +4,7 @@
     <div class="col-sm-4 sidenav">
     </div>
     <div class="col-sm-4 "> 
-        <%= form_for [@user, @reminder] do |f| %>
+        <%= form_for [@user, @reminder], validate: true do |f| %>
           <% if @reminder.errors.any? %>
             <h2> Errors: </h2>
             <ul> 
