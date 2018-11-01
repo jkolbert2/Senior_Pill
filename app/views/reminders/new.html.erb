@@ -5,10 +5,10 @@
     </div>
     <div class="col-sm-4 "> 
         <%= form_for [@user, @reminder], validate: true do |f| %>
-          <% if @reminder.errors.any? %>
+          <% if f.errors.any? %>
             <h2> Errors: </h2>
             <ul> 
-              <% @reminder.errors.full_messages.each do |messages| %>
+              <% f.errors.full_messages.each do |messages| %>
                 <li> <%= messages %> </li>
               <% end %> 
             </ul>
