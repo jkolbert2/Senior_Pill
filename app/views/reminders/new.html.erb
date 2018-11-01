@@ -7,37 +7,35 @@
         <%= form_for [@user, @reminder] do |f| %>
         <div class="form-group">
           <%= f.label :Date %>
-          <%= f.text_field :Date, class:"form-control" %>
+          <%= f.date_select :Date, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year - 100}, {required: true}%>
         </div>  
-        <div class="has-error">
+        
           <div class="form-group">
-          <%= f.label :Name, "Name" %>
-          <%= f.text_field :Name, class:"form-control"%>
-          </div>
+          <%= f.label :Name, "Name", placeholder: "Full Name", :required => true %>
+          <%= f.text_field :Name, :validates => true, class:"form-control",  placeholder: "Full Name", :required => true %>
         </div>
         
         <div class="form-group">
           <%= f.label :Drug, "Drug" %>
-          <%= f.text_field :Drug, class:"form-control" %>
+          <%= f.text_field :Drug, class:"form-control", placeholder: "Drug", :required => true %>
         </div>
         
         <div class="form-group">
           <%= f.label :Amount, "Amount" %>
-          <%= f.text_field :Amount, class:"form-control" %>
+          <%= f.text_field :Amount, class:"form-control", placeholder: "Amount", :required => true %>
         </div>
         
         <div class="form-group">
           <%= f.label :Purpose, "Purpose" %>
-          <%= f.text_field :Purpose, class:"form-control" %>
+          <%= f.text_field :Purpose, class:"form-control", placeholder: "Purpose" %>
         </div>
         
         <div class="form-group">
           <%= f.label :Email, "Email" %>
-          <%= f.text_field :Email, class:"form-control" %>
+          <%= f.text_field :Email, class:"form-control",placeholder: "Email", :required => true %>
         </div>
-        <div class="form-group">
+        
           <%= f.submit "Submit", class: "btn btn-default btn-warning btn-block" %>
-        </div>
         
         <div class="form-group">
           <%end%>
