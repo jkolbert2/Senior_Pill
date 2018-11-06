@@ -34,8 +34,23 @@
           <%= f.label :Email, "Email" %>
           <%= f.text_field :Email, class:"form-control",placeholder: "Email", :required => true %>
         </div>
+<<<<<<< HEAD
         
           <%= f.submit "Submit", class: "btn btn-default btn-warning btn-block" %>
+=======
+        <div class="form-group">
+            <% if @reminder.errors.any? %>
+                <h2> Errors: </h2>
+                <ul> 
+                    <% @reminder.errors.full_messages.each do |messages| %>
+                    <li> <%= messages %> </li>
+                    <% end %> 
+                </ul>
+            <% else %>
+                <%= f.submit "Submit", class: "btn btn-default btn-warning btn-block" %>
+            <% end %>
+        </div>
+>>>>>>> fixes?
         
         <div class="form-group">
           <%end%>
