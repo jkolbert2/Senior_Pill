@@ -4,7 +4,7 @@ ruby '2.3.4'
 # Twilio allows us to use text messages for reminders
 
 gem 'twilio-ruby'
-gem 'client_side_validations'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.0.1'

@@ -4,15 +4,7 @@
     <div class="col-sm-4 sidenav">
     </div>
     <div class="col-sm-4 "> 
-        <%= form_for @reminder, validate: true do |f| %>
-          <% if @reminder.errors.any? %>
-            <h2> Errors: </h2>
-            <ul> 
-              <% @reminder.errors.full_messages.each do |messages| %>
-                <li> <%= messages %> </li>
-              <% end %> 
-            </ul>
-          <% end %>
+        <%= form_for [@user, @reminder] do |f| %>
         <div class="form-group">
           <%= f.label :Date %>
           <%= f.date_select :Date, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year - 100}, {required: true}%>
@@ -42,14 +34,8 @@
           <%= f.label :Email, "Email" %>
           <%= f.text_field :Email, class:"form-control",placeholder: "Email", :required => true %>
         </div>
-<<<<<<< HEAD
         
           <%= f.submit "Submit", class: "btn btn-default btn-warning btn-block" %>
-=======
-        <div class="form-group">
-
-        </div>
->>>>>>> fixes?
         
         <div class="form-group">
           <%end%>
