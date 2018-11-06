@@ -51,6 +51,6 @@ class RemindersController < ApplicationController
     
     def reminder_params
         params.require(:reminder)
-        params.require(:reminder).permit(:Date,:Name,:Drug,:Amount,:Purpose,:Email, :user_id)
+        params.require(:reminder).permit(:Date,:Name,:Drug,:Amount,:Purpose,:Email)
     end
 end
