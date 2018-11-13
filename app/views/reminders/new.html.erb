@@ -10,11 +10,6 @@
           <%= f.date_select :Date, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year - 100}, {required: true}%>
         </div>  
         
-          <div class="form-group">
-          <%= f.label :Name, "Name", placeholder: "Full Name", :required => true %>
-          <%= f.text_field :Name, :validates => true, class:"form-control",  placeholder: "Full Name", :required => true %>
-        </div>
-        
         <div class="form-group">
           <%= f.label :Drug, "Drug" %>
           <%= f.text_field :Drug, class:"form-control", placeholder: "Drug", :required => true %>
@@ -39,7 +34,8 @@
         
         <div class="form-group">
           <%end%>
-          <%= button_to "Return to Index", { :action => "index" }, :method => :get, class: "btn btn-block btn-warning" %> 
+          <br>
+            <div class = "btn btn-warning btn-block"><%= link_to 'Back to Profile', user_path(current_user.id) %></div>
         </div>
     </div>
 </div>

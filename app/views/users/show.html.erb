@@ -1,26 +1,41 @@
-<!--<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>-->
-
-<% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
+  <div class="col-3">
+      <h5>
+        <br>
+        <span class="glyphicon glyphicon-ban-circle"></span>
         <%= gravatar_for @user %>
         <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
+        <p class="text-center">
+          <div class = "btn btn-info"><%= link_to 'New Pill Reminder', new_user_reminder_path(current_user.id) %></div>
+        </p>
+      </h5>
+  </div>
+  <div class="col-6">
+    <br>
+    <h3 class="text-center"> Your Current Pill Reminders</h3>
+    <br>
+    <table class="table table-bordered table-hover"> 
+    <thead>
+      <tr>
+      <th> Date </th>
+      <th> Drug </th>
+      <th> Purpose </th>
+      <th> Amount </th>
+      </tr>
+    </thead>
+    <tbody>
+       <% @reminders.each do |drug| %>
+         <% if drug != nil %>
+       <tr>
+          <td> <%= drug.Date %> </td>
+          <td> <%= drug.Drug %> </td>
+          <td> <%= drug.Purpose %> </td>
+          <td> <%= drug.Amount %> </td>
+        </tr>
+        <%end%>
+        <%end%>
+    </tbody>
+    </table>
+  </div>
+  <div class="col-3"></div>
 </div>
