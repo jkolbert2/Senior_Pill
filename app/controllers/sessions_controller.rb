@@ -20,5 +20,10 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
   
+  # skip_before_filter :set_current_user
+  
+  #def create
+  #  render text: request.env['omniauth.auth'].to_yaml
+  #end
   
 end
