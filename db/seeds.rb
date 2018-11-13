@@ -18,6 +18,6 @@ end
 25.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@pillProject.org"
-  User.create!(name:  name,
+  user.create!(name:  name,
                email: email)
 end
