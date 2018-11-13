@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @reminders = current_user.reminders
   end
 
   def create
@@ -26,7 +27,7 @@ class UsersController < ApplicationController
         @user = User.find params[:id]
         @user.destroy
         redirect_to users_path
-    end
+  end
 
   private
 
