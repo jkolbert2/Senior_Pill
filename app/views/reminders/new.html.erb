@@ -15,13 +15,13 @@
           <%= f.text_field :Drug, class:"form-control", placeholder: "Drug", :required => true %>
         </div>
         
-         <%= f.label :time, "Time and Date", :class => 'control-label col-lg-2' %>
+         <%= f.label :Time, "Time and Date", :class => 'control-label col-lg-2' %>
         <!-- Rails expects time_select when dealing with ActiveRecord forms -->
         <div class="col-lg-2">
-          <%= time_select :appointment, :time, {:class => "form-control" } %>
+          <%= time_select :appointment, :Time, {:class => "form-control" } %>
         </div>
         <div class="col-lg-4">
-          <%= date_select :appointment, :time, {:class => "form-control" } %>
+          <%= date_select :appointment, :Time, {:class => "form-control" } %>
         </div>
         
         <div class="form-group">
