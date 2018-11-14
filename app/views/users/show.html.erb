@@ -34,8 +34,8 @@
           <td> <%= drug.Drug %> </td>
           <td> <%= drug.Purpose %> </td>
           <td> <%= drug.Amount %> </td>
-          <td> <%= link_to(image_tag("telescope-clipart-png-1.png", height: "20", width: "20"), user_reminder_path(@user, drug),class:"btn") %></td>
-          <td> <%= link_to(image_tag("pencil-png-643.png", height: "20", width: "20"), edit_user_reminder_path(@user, drug),class:"btn") %></td>
+          <td> <%= link_to(image_tag("telescope.png", height: "20", width: "20"), user_reminder_path(@user, drug),class:"btn") %></td>
+          <td> <%= link_to(image_tag("pencil.png", height: "20", width: "20"), edit_user_reminder_path(@user, drug),class:"btn") %></td>
         </tr>
         <%end%>
         <%end%>
