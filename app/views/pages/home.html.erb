@@ -1,9 +1,18 @@
 <div class="container">
+  <br>
+  <% if logged_in? %>
+  <h1 class="text-center"> Welcome Back!</h1>
+  <div class="jumbotron"  style="background-color: #ffe6e6;">
+    <h1>Pill Project</h1> 
+    <p>This site will hopefully remind you to take your medication and is very much under construction.</p> 
+  </div>
+  <% else %>
   <div class="jumbotron">
     <h1>Pill Project</h1> 
     <p>This site will hopefully remind you to take your medication and is very much under construction.</p> 
   </div>
+  <% end %>
   <% if logged_in? %>
-  <div class = "btn btn-warning"><%= link_to 'New Reminder', new_user_reminder_path(current_user.id) %></div>
+  <%= link_to 'New Pill Reminder', new_user_reminder_path(current_user.id), class:"btn btn-warning" %>
   <% end %>
 </div>
