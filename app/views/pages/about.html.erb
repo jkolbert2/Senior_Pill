@@ -1,36 +1,35 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-</head>
-<body>
-
-<div class="container-fluid text-center">    
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-
-    </div>
-    <div class="col-sm-8 text-left"> 
-      <h1>Welcome</h1>
-      <center></center><p>
-          
-          This is the Pill Project! Our goal is to help you never forget to take your pills! </p></center>
-      <hr>
-    </div>
-    <div class="col-sm-2 sidenav">
-
-       
-      </div>
-
-      
-      </div>
+  <div class="container-fluid">
+  <div class="row align-items-center ">
+  <div class="col">col-3</div>
+  <div class="col-8">
+  <br><br><br>
+  <div class="card-deck">
+  <div class="card">
+    <%= image_tag("citrus.png", height: "50%", class:"card-img-top") %>
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the first card</p>
     </div>
   </div>
+  <div class="card bg-warning">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the second card</p>
+    </div>
+  </div>
+  <div class="card bg-success">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the third card</p>
+    </div>
+  </div>
+  <div class="card bg-danger">
+    <div class="card-body text-center">
+      <p class="card-text">Some text inside the fourth card</p>
+    </div>
+  </div> 
+</div></div>
+  <div class="col">col-3</div>
+  </div>
 </div>
-
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
-
-</body>
 </html>
