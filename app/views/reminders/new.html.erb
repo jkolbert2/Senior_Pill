@@ -15,6 +15,19 @@
           <%= f.text_field :Drug, class:"form-control", placeholder: "Drug", :required => true %>
         </div>
         
+         <%= f.label :time, "Time and Date", :class => 'control-label col-lg-2' %>
+        <!-- Rails expects time_select when dealing with ActiveRecord forms -->
+        <div class="col-lg-2">
+          <%= time_select :appointment, :time, {:class => "form-control" } %>
+        </div>
+        <div class="col-lg-4">
+          <%= date_select :appointment, :time, {:class => "form-control" } %>
+        </div>
+        <div class="col-lg-2">
+          <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.all.sort, default: "Pacific Time (US & Canada)" %>
+        </div>
+    <%=f.error_span(:time) %>
+        
         <div class="form-group">
           <%= f.label :Amount, "Amount" %>
           <%= f.text_field :Amount, class:"form-control", placeholder: "Amount", :required => true %>
