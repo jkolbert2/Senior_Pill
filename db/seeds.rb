@@ -6,11 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-reminders = [
-    {:Date => '9/24/2018', :Name => 'Jackie', :Drug => 'Advil',:Purpose => 'Fever',:Amount => 2,:Email => 'reminderstest24@gmail.com'},
-    {:Date => '9/24/2018', :Name => 'Jackie', :Drug => 'Claritin',:Purpose => 'Fever',:Amount => 2, :Email => 'reminderstest24@gmail.com'}
-]
-    
-reminders.each do |drug|
-    Reminder.create!(drug)
+
+
+25.times do  
+  user = User.new
+  user.name = Faker::Name
+  user.email = Faker::Internet.email
+  user.password = '123456'
+  user.password_confirmation = '123456'
+  user.save
 end

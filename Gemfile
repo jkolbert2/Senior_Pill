@@ -5,6 +5,8 @@ ruby '2.3.4'
 
 gem 'twilio-ruby'
 
+gem 'faker'
+
 gem 'will_paginate', '> 3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
