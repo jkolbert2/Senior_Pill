@@ -7,7 +7,7 @@
         <%= form_for [@user, @reminder] do |f| %>
         <div class="form-group">
           <%= f.label :Date %>
-          <%= f.date_select :Date, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year - 100}, {required: true}%>
+          <%= f.text_field :Date, class:"form-control", placeholder: "MM/DD/YYYY", :required => true %>
         </div>  
         
         <div class="form-group">
@@ -44,7 +44,7 @@
         <div class="form-group">
           <%end%>
           <br>
-            <div class = "btn btn-warning btn-block"><%= link_to 'Back to Profile', user_path(current_user.id) %></div>
+          <%= link_to 'Back to Profile', user_path(current_user.id), class:"btn btn-warning btn-block" %>
         </div>
     </div>
 </div>

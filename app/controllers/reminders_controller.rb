@@ -1,7 +1,7 @@
 class RemindersController < ApplicationController
     
     def index
-        @reminders = current_user.reminders
+        @reminders = current_user.reminders.page(params[:page]).per_page(5)
     end
     
     def new
@@ -13,23 +13,26 @@ class RemindersController < ApplicationController
     def create
         #@reminder = Reminder.create(reminder_params)
         #redirect_to reminders_path
-        @user = User.find(params[:user_id])
-        @reminder = @user.reminders.create(reminder_params)
+        @user = User.find(params[:user_id]);
+        @reminder = @user.reminders.create(reminder_params);
         redirect_to "/users/#{@user.id}"
         
     end
     def show
-        @reminder = Reminder.find(params[:id]);
+        @user = User.find(params[:user_id]);
+        @reminder = @user.reminders.find(params[:id]);
     end
     
     def edit
-        @reminder = Reminder.find params[:id]
+        @user = User.find(params[:user_id]);
+        @reminder = @user.reminders.find(params[:id]);
     end
 
     def update
-        @reminder = Reminder.find params[:id]
-        @reminder.update_attributes!(reminder_params)
-        redirect_to reminders_path
+        @user = User.find(params[:user_id]);
+        @reminder = Reminder.find params[:id];
+        @reminder.update_attributes!(reminder_params);
+        redirect_to "/users/#{@user.id}"
     end
     
     def destroy
