@@ -15,3 +15,4 @@
   user.password_confirmation = '123456'
   user.save
 end
+
