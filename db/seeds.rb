@@ -11,7 +11,7 @@
 
 25.times do  
   user = User.new
-  user.name = Faker::Name
+  user.name = Faker::Name.name
   user.email = Faker::Internet.email
   user.password = '123456'
   user.password_confirmation = '123456'
