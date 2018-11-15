@@ -30,8 +30,8 @@
           <%= f.text_field :Email, class:"form-control",placeholder: "Email", :required => true %>
         </div>
         <div class="form-group">  
-          <%= f.label :from %><br>
-          <%= f.select :from, [ 'Once Daily','Twice Daily','Once Weekly'], :prompt => 'Select One', :required => true %>
+          <%= f.label :frequency %><br>
+          <%= f.select :frequency, [ 'Once Daily','Twice Daily','Once Weekly'], :prompt => 'Select One', :required => true %>
         </div>
         
           <%= f.submit "Submit", class: "btn btn-default btn-warning btn-block" %>
