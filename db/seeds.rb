@@ -14,9 +14,9 @@ reminders = [
 reminders.each do |drug|
     Reminder.create!(drug)
 end
-25.times do  
-  user = User.new
-  user.name = Faker::Name
-  user.email = Faker::Internet.email
-  user.save
+25.times do |n|
+  name  = Faker::Name.name
+  email = "example-#{n+1}@pillProject.org"
+  User.create!(name:  name,
+               email: email)
 end
