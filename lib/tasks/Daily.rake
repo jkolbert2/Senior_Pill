@@ -6,7 +6,7 @@ namespace :email_sending do
          puts drug.Drug
         if drug.frequency == "daily"
              puts "found one!"
-             drug.send_reminder
+             drug.ReminderMailer.reminder_email(@reminder).deliver
         else 
          puts "nope!"
         end
