@@ -4,7 +4,7 @@ namespace :email_sending do
     task daily: :environment do
     Reminder.find do |drug|
         puts drug.Drug
-        if drug.frequency == "daily"
+        if drug.frequency == "Daily"
             ReminderMailer.reminder_email(drug).deliver
         else 
             puts "nope!"
