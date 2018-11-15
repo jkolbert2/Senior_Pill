@@ -7,6 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+
+
 25.times do  
   user = User.new
   user.name = Faker::Name.name
