@@ -32,6 +32,8 @@
         <div class="form-group">
           <%= f.label :frequency, "Frequency" %>
           <%= f.text_field :frequency, class:"form-control",placeholder: "Frequency", :required => true %>
+          <%= f.label :from %><br>
+          <%= f.select :from, [ 'Once Daily','Twice Daily','Once Weekly'], :prompt => 'Select One', :required => true %>
         </div>
         
           <%= f.submit "Submit", class: "btn btn-default btn-warning btn-block" %>
