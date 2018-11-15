@@ -5,6 +5,10 @@ ruby '2.3.4'
 
 gem 'twilio-ruby'
 
+<<<<<<< HEAD
+=======
+gem 'faker'
+>>>>>>> accb87cc853136a34ad8193f1d24ee1f85faa58b
 
 gem 'will_paginate', '> 3.0'
 

@@ -66,8 +66,13 @@ GEM
     debug_inspector (0.0.3)
     erubis (2.7.0)
     execjs (2.7.0)
+<<<<<<< HEAD
     faker (1.7.3)
       i18n (~> 0.5)
+=======
+    faker (1.9.1)
+      i18n (>= 0.7)
+>>>>>>> accb87cc853136a34ad8193f1d24ee1f85faa58b
     faraday (0.15.3)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
@@ -201,7 +206,11 @@ DEPENDENCIES
   byebug
   client_side_validations!
   coffee-rails (~> 4.1.0)
+<<<<<<< HEAD
   faker (= 1.7.3)
+=======
+  faker
+>>>>>>> accb87cc853136a34ad8193f1d24ee1f85faa58b
   figaro
   jbuilder (~> 2.0)
   jquery-rails
