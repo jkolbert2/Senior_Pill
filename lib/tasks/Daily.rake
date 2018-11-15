@@ -3,7 +3,7 @@ namespace :email_sending do
   task daily: :environment do
     puts "Hello!"
      Reminder.find do |drug|
-         puts Reminder.Drug
+         puts drug.Drug
         if drug.frequency == "daily"
              puts "found one!"
              drug.send_reminder
