@@ -81,7 +81,7 @@ Rails.application.configure do
   :domain               => 'mail.google.com',
   :user_name            => 'pillprojectteam@gmail.com',
   :password             => 'PILLproject123',
-  :authentication       => "login",
+  :authentication       => "plain",
   :enable_starttls_auto => true,
   :openssl_verify_mode  => 'none'
 }
