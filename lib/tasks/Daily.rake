@@ -22,4 +22,15 @@ namespace :email_sending do
         end
      end
 end
+  task once_weekly: :enviornment do
+      Reminder.find do |drug|
+        puts drug.Drug
+        if drug.frequency == "Once Weekly"
+            puts "found one!"
+            ReminderMailer.reminder_email(drug).deliver
+        else
+            puts "nope!"
+        end
+     end
+end
 end
