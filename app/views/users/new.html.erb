@@ -29,6 +29,10 @@
         <%= f.password_field :password_confirmation, class:"form-control", placeholder:"Confirm Password", required: true  %>
         </div>
         
+        <div class="form-group">
+        <%= f.select :admin, [['Caregiver', true], [ 'Patient', false]] %>
+        </div>
+        
         <%= f.submit "Create my account", class: "btn btn-primary" %>
         <% end %>
     </div>
