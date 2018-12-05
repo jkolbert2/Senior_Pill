@@ -15,6 +15,7 @@ class RemindersController < ApplicationController
         #redirect_to reminders_path
         @user = User.find(params[:user_id]);
         @reminder = @user.reminders.create(reminder_params);
+        flash[:success] = "Reminder Successfully Created"
         redirect_to "/users/#{@user.id}"
         
     end
