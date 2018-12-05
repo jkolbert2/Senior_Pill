@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181114194619) do
+ActiveRecord::Schema.define(version: 20181205034814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,14 +40,26 @@ ActiveRecord::Schema.define(version: 20181114194619) do
     t.string   "Email"
     t.integer  "user_id"
     t.string   "frequency"
+    t.boolean  "Active"
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
+    t.index ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.string   "password_digest"
+    t.string   "provider",        limit: 50,  default: "", null: false
+    t.string   "uid",             limit: 500, default: "", null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
