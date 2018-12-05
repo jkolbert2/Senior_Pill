@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
    # @user.push(newpatient_params);
     redirect_to "/users/#{@user.id}"
     #patientid = 
