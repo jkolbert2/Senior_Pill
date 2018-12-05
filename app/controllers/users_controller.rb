@@ -12,7 +12,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to Pill Project"
+      if @user.admin == false
+        flash[:success] = "Welcome to Pill Project"
+      else
+        flash[:success] = "Welcome to Pill Project. You are now an Admin"
+      end
       redirect_to @user
     else
       render 'new'
