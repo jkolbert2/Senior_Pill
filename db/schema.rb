@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20181205041224) do
     t.string   "Email"
     t.integer  "user_id"
     t.string   "frequency"
+    t.boolean  "Active"
   end
 
   create_table "users", force: :cascade do |t|

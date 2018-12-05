@@ -34,6 +34,11 @@
           <%= f.select :frequency, [ 'Daily','Twice Daily','Once Weekly'], :prompt => 'Select One', :required => true %>
         </div>
         
+        <div class="form-group">
+            <%= f.label :Active, "Active" %>
+            <%= f.check_box :Active %>
+        </div>
+        
           <%= f.submit "Submit", class: "btn btn-default btn-warning btn-block" %>
         
         <div class="form-group">
