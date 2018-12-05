@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   get 'sessions/new'
   get  '/signup',  to: 'users#new'
+  get  '/edit',  to: 'users#edit'
   get "/pages/:page" => "pages#show"
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
