@@ -26,6 +26,15 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+  
+  def edit
+    @user = User.find(params[:id])
+    @user.update_attributes!(newpatient_params);
+    redirect_to "/users/#{@user.id}"
+    #patientid = 
+    #@user.patientlist.push(patientid)
+  end
+  
 
   def destroy
         @user = User.find params[:id]
@@ -40,5 +49,8 @@ class UsersController < ApplicationController
                                    :password_confirmation)
   end
   
+  def newpatient_params
+    params.require(:user).permit(:patientlist)
+  end
 end
 

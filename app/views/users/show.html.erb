@@ -52,5 +52,6 @@
    <%= will_paginate @reminders, previous_label: h("<"), next_label: h(">") %>
   </div>
   <div class="col-3"></div>
+  <div><%= link_to 'New Patient', edit_user_path(current_user.id), class:"btn btn-warning" %></div>
 </div>
 </div>
