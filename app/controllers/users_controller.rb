@@ -12,7 +12,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      @user.patientlist = []
       if @user.admin == false
         flash[:success] = "Welcome to Pill Project"
       else
