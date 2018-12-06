@@ -11,11 +11,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      @user.patientlist = []
       log_in @user
       if @user.admin == false
         flash[:success] = "Welcome to Pill Project"
       else
-        @user.patientlist = []
         flash[:success] = "Welcome to Pill Project. You are now an Admin"
       end
       redirect_to @user
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :patientlist)
+                                   :password_confirmation)
   end
   
   def newpatient_params
