@@ -7,6 +7,13 @@
         </div>
         <div class="col-sm-4 "> 
         
+         <%= form_for [@user] do |f| %>
+        <div class="form-group">
+          <%= f.label :patientlist %>
+          <%= f.text_field :patientlist, class:"form-control" %>
+        </div>  
+        
+        
 
     </div>
 </div>
