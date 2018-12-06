@@ -5,10 +5,9 @@ namespace :Admin_testing do
     User.find do |user|
             puts user.name
             puts user.admin
+            puts user.patientlist
             user.patientlist.push(1)
             puts user.patientlist
-           #user.patientlist.push(1)
-            puts user.patientlist.class
         end
      end
   end
