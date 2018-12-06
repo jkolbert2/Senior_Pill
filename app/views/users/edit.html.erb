@@ -9,7 +9,6 @@
         
          <%= form_for [@user] do |f| %>
         <div class="form-group">
-             <%= form_tag(:action => :update, :method=>'post', :multipart => true, :class => 'form-control') do %>
               <%= f.label :patientlist, "Add patient ID" %>
               <%= f.text_field :patientlist, class:"form-control" %>
         </div>  
