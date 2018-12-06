@@ -3,7 +3,12 @@ namespace :Admin_testing do
   desc "Tests for existence of, and prints, users associated patient list"
     task admin_test: :environment do
     User.find do |user|
-        puts user.patientlist
+            puts user.name
+            puts user.admin
+            user.patientlist.push(1)
+            puts user.patientlist
+           #user.patientlist.push(1)
+            puts user.patientlist.class
         end
      end
   end

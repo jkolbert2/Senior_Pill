@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+    @user.patientlist = []
   end
 
   def new
