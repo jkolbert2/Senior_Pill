@@ -15,13 +15,13 @@ class UsersController < ApplicationController
       if @user.admin == false
         flash[:success] = "Welcome to Pill Project"
       else
+        @user.patientlist = []
         flash[:success] = "Welcome to Pill Project. You are now an Admin"
       end
       redirect_to @user
     else
       render 'new'
     end
-     @user.patientlist = []
   end
 
   def new
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :patientlist)
   end
   
   def newpatient_params
