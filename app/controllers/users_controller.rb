@@ -35,6 +35,11 @@ class UsersController < ApplicationController
     #@user.patientlist.push(patientid)
   end
   
+  def update
+        @user = User.find(params[:id]);
+        @user.update_attributes!(newpatient_params);
+        redirect_to "/users/#{@user.id}"
+  end
 
   def destroy
         @user = User.find params[:id]
