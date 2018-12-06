@@ -7,19 +7,6 @@
         </div>
         <div class="col-sm-4 "> 
         
-        <%= form_for (@user) do |f| %>
-        <div class="form-group">
-            Add patient
-        </div>
-        
-        <div class="form-group">
-            <%= f.label :patientlist %>
-            <%= f.text_field :patientlist, class:"form-control", placeholder:"Patient ID", required: true%>
-        </div>
 
-        
-        
-        <%= f.submit "Add patient", class: "btn btn-primary" %>
-        <% end %>
     </div>
 </div>
