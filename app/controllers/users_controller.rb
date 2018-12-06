@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   
   def update
         @user = User.find(params[:id]);
-        @user.patientlist.push(newpatient_params);
+        @user.patientlist << (newpatient_params);
         @user.save
         redirect_to "/users/#{@user.id}"
   end
