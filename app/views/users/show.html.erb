@@ -11,10 +11,9 @@
         <%= link_to 'New Pill Reminder', new_user_reminder_path(current_user.id), class:"btn btn-warning" %>
       </h5>
   </div>
-  <% if !(@user.admin)%>
   <div class="col-6">
     <br>
-    <h3 class="text-center"> Your Current Pill Reminders</h3>
+      <h3 class="text-center"> Your Current Pill Reminders</h3>
     <br>
     <table class="table table-bordered text-center"> 
     <thead>
@@ -52,8 +51,22 @@
     </table>
    <%= will_paginate @reminders, previous_label: h("<"), next_label: h(">") %>
   </div>
-  <%end%>
+  <div>
+     <thead>
+      <tr>
+      <th> Patient_id </th>
+      </tr>
+    </thead>
+    <tbody>
+       
+       <tr>
+          <td> <%= @user.patientlist %> </td>
+        </tr>
+
+    </tbody>
+  </div>
   <div class="col-3"></div>
   <div><%= link_to('New Patient', edit_user_path(current_user.id), class:"btn btn-warning") %></div>
 </div>
+
 </div>
