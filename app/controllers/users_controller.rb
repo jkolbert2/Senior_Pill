@@ -56,7 +56,7 @@ class UsersController < ApplicationController
   end
   
   def newpatient_params
-    params.require(:user).permit(:patientlist)
+    params.require(:patientlist).permit(:patientlist)
   end
 end
 
