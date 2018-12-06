@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    
+    seralize :patientlist    
     has_many :reminders
     accepts_nested_attributes_for :reminders
     
