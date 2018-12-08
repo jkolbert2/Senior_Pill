@@ -59,13 +59,14 @@
     </table>
    <%= will_paginate @reminders, previous_label: h("<"), next_label: h(">") %>
   </div>
+  
+  
+  
+  <% if current_user.admin? %>
   <div class="col-3"></div>
     <table class="table table-bordered text-center"> 
     YOUR PATIENT'S REMINDERS
     <tbody>
-    <% Reminder.all.each do |drug| %>
-    <% if drug.doctor == current_user.email %>
-    <tr>
     <thead>
       <tr>
       <th> Date </th>
@@ -80,6 +81,11 @@
       <th> Edit </th>
       </tr>
     </thead>
+    YOUR PATIENT'S REMINDERS
+    <tbody>
+       <% Reminder.all.each do |drug| %>
+         <% if drug.doctor == current_user.email %>
+         <tr>
             <td> <%= drug.Date %> </td>
             <td> <%= drug.Drug %> </td>
             <td> <%= drug.doctor %> </td>
@@ -103,5 +109,6 @@
           <%end%>
       </tbody>
     </table>
+  <% end %>
 </div>
 </div>
