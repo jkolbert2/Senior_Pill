@@ -49,6 +49,9 @@
         </tr>
         <%end%>
         <%end%>
+      <% if current_user.admin %>
+      HEY THERE ADMIN
+      <%end%>
     </tbody>
     </table>
    <%= will_paginate @reminders, previous_label: h("<"), next_label: h(">") %>
