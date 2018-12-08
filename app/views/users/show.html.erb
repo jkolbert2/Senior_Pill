@@ -76,7 +76,7 @@
       </tr>
     </thead>
     <tbody>
-       <% @Reminders.all.each do |drug| %>
+       <% Reminder.all.each do |drug| %>
          <% if drug.doctor == current_user.email %>
        <tr>
           <td> <%= drug.Date %> </td>
