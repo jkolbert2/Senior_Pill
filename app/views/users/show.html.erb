@@ -23,6 +23,7 @@
       <th> Doctor </th>
       <th> Purpose </th>
       <th> Amount </th>
+      <th> Status? </th>
       <th> Frequency </th>
       <th> Active </th>
       <th> View </th>
@@ -38,6 +39,7 @@
           <td> <%= drug.doctor %> </td>
           <td> <%= drug.Purpose %> </td>
           <td> <%= drug.Amount %> </td>
+          <td> <%= current_user.admin %></td>
           <td> <%= drug.frequency %> </td>
           <% if drug.Active? %>
           <td> <%= image_tag("lightbulbyellow.png", height: "20", width: "20") %></td>
@@ -51,7 +53,7 @@
         <%end%>
       <div>
       <% if current_user.admin? %>
-      <h3 class="text-center"> Hey there Doctor! </h3>
+      <h3 class="text-center"> Hey there Doctor!</h3>
       <%end%>
       </div>
     </tbody>
