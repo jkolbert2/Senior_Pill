@@ -81,7 +81,6 @@
       <th> Edit </th>
       </tr>
     </thead>
-    YOUR PATIENT'S REMINDERS
     <tbody>
        <% Reminder.all.each do |drug| %>
          <% if drug.doctor == current_user.email %>
