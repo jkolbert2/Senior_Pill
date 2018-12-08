@@ -39,7 +39,6 @@ class UsersController < ApplicationController
         @user = User.find(params[:id]);
         @Patients = @user.patientlist
         @Patients.push(1)
-        @user.save
         redirect_to "/users/#{@user.id}"
   end
 
