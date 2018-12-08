@@ -40,9 +40,9 @@
           <td> <%= drug.Purpose %> </td>
           <td> <%= drug.Amount %> </td>
           <% if current_user.admin? %>
-            <td>  hey there doctor! </td>
+            <td> Caregiver </td>
           <% else %>
-            <td> hey there patient! </td>
+            <td> Patient </td>
            <% end %>
           <td> <%= drug.frequency %> </td>
           <% if drug.Active? %>
@@ -55,11 +55,6 @@
         </tr>
         <%end%>
         <%end%>
-      <div>
-      <% if current_user.admin? %>
-      <h3 class="text-center"> Hey there Doctor!</h3>
-      <%end%>
-      </div>
     </tbody>
     </table>
    <%= will_paginate @reminders, previous_label: h("<"), next_label: h(">") %>
