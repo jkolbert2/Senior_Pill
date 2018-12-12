@@ -236,12 +236,9 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
-<<<<<<< HEAD
+    will_paginate (3.1.6)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-=======
-    will_paginate (3.1.6)
->>>>>>> 5d9f91b3b15db6e8f20de14bbec60ad6dc460161
 
 PLATFORMS
   ruby
@@ -252,13 +249,10 @@ DEPENDENCIES
   capybara
   client_side_validations!
   coffee-rails (~> 4.1.0)
-<<<<<<< HEAD
   cucumber-rails
   cucumber-rails-training-wheels
   database_cleaner
-=======
   faker
->>>>>>> 5d9f91b3b15db6e8f20de14bbec60ad6dc460161
   figaro
   jbuilder (~> 2.0)
   jquery-rails
