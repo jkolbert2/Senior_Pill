@@ -1,39 +1,40 @@
-<nav class="navbar ">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="/pages/home">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/pages/home">Home</a></li>
-        <li><a href="/pages/about">About</a></li>
-        <li><a href="/pages/contact">Contact</a></li>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-image: linear-gradient(to bottom, #66ccff, #f2f2f2);">
+  <a class="navbar-brand" href="/pages/home">
+    <%= image_tag("citrus.png", height: "50", width: "50", alt: "Pomelo") %>
+    Pill Project
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/pages/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/pages/about">About</a>
+      </li>
+      <li>
+         <a class="nav-link" href="/pages/contact">Contact</a>
+      </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <% if logged_in? %>
-          <li><%= link_to "Users", current_user %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Profile", current_user %></li>
-              
-              <li class="divider"></li>
-              <li>
-                <%= link_to "Log out", logout_path, method: :delete %>
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
+      <ul class="navbar-nav ml-auto">
+      <% if logged_in? %>
+      <div class="nav-item dropdown dropdown-menu-center ">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= current_user.name %>
+        </a>
+        <div class="dropdown-menu  dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Profile", current_user, class:"dropdown-item"%>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Log out", logout_path, method: :delete, class:"dropdown-item" %>
+        </div>
+      </div>
+      <% else %>
+          <%= link_to "Log in", login_path,{ :class=>"nav-link" }%>
+      <% end %>
       </ul>
-    </div>
   </div>
 </nav>

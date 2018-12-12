@@ -38,14 +38,34 @@ Given(/^a logged in patient$/) do
   click_button "Log In"
 end
 
+Given(/^I am a new and logged in patient$/) do
+  name = 'Test User'
+  email = 'testing@pill.com'
+  password = 'password'
+  User.new(:name => name, :email => email, :password => password, :password_confirmation => password).save!
+
+  visit '/login'
+  fill_in "Email", :with => email
+  fill_in "Password", :with => password
+  
+  click_button "Log In"
+
+end
+
 
 When(/^I am on the Create New Reminder page$/) do
-  visit ('users/101/reminders/new')
+  visit ('6/reminders/new')
 end
 
 When(/^I am on the home page$/) do
   visit ('pages/home')
 end
+
+When(/^I am on profile page$/) do
+  visit ('6')
+end
+
+
 
 When(/^I choose "Caregiver"$/) do
   choose("Caregiver")

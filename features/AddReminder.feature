@@ -1,9 +1,10 @@
 Feature: User can manually add new reminder
   
 Scenario: Add new reminder (happy)
-  Given a logged in patient
-  And I am on the Create New Reminder page
-  When I fill in "Date" with "02/24/2019"
+  Given I am a new and logged in patient
+  Then I should see "New Pill Reminder"
+  When I follow "Your Pill Reminders"
+  And I fill in "Date" with "02/24/2019"
   And I fill in "Drug" with "Advil"
   And I fill in "Doctor's email" with "shrek@tulane.edu"
   And I fill in "Amount" with "2"

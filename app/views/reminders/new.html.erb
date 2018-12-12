@@ -7,13 +7,8 @@
         <%= form_for [@user, @reminder] do |f| %>
         <div class="form-group">
           <%= f.label :Date %>
-          <%= f.date_select :Date, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year - 100}, {required: true}%>
+          <%= f.text_field :Date, class:"form-control", placeholder: "MM/DD/YYYY", :required => true %>
         </div>  
-        
-          <div class="form-group">
-          <%= f.label :Name, "Name", placeholder: "Full Name", :required => true %>
-          <%= f.text_field :Name, :validates => true, class:"form-control",  placeholder: "Full Name", :required => true %>
-        </div>
         
         <div class="form-group">
           <%= f.label :Drug, "Drug" %>
@@ -34,12 +29,22 @@
           <%= f.label :Email, "Email" %>
           <%= f.text_field :Email, class:"form-control",placeholder: "Email", :required => true %>
         </div>
+        <div class="form-group">  
+          <%= f.label :frequency %><br>
+          <%= f.select :frequency, [ 'Daily','Twice Daily','Once Weekly'], :prompt => 'Select One', :required => true %>
+        </div>
+        
+        <div class="form-group">
+            <%= f.label :Active, "Active" %>
+            <%= f.check_box :Active %>
+        </div>
         
           <%= f.submit "Submit", class: "btn btn-default btn-warning btn-block" %>
         
         <div class="form-group">
           <%end%>
-          <%= button_to "Return to Index", { :action => "index" }, :method => :get, class: "btn btn-block btn-warning" %> 
+          <br>
+          <%= link_to 'Back to Profile', user_path(current_user.id), class:"btn btn-warning btn-block" %>
         </div>
     </div>
 </div>

@@ -14,7 +14,7 @@ module NavigationHelpers
     case page_name
 
     when /^the home\s?page$/
-      '/'
+      '/pages/home'
       
     when /loggedin/
       'users/2/reminders/new'

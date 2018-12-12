@@ -79,9 +79,9 @@ Rails.application.configure do
   :address              => "smtp.gmail.com",
   :port                 => 587,
   :domain               => 'mail.google.com',
-  :user_name            => ENV['gmail_username'],
-  :password             => ENV['gmail_password'],
-  :authentication       => "login",
+  :user_name            => 'pillprojectteam@gmail.com',
+  :password             => 'PILLproject123',
+  :authentication       => "plain",
   :enable_starttls_auto => true,
   :openssl_verify_mode  => 'none'
 }
