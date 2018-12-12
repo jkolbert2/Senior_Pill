@@ -40,7 +40,7 @@ end
 
 
 When(/^I am on the Create New Reminder page$/) do
-  visit ('reminders/new')
+  visit ('users/101/reminders/new')
 end
 
 When(/^I am on the home page$/) do
