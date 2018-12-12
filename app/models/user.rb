@@ -17,13 +17,12 @@ class User < ApplicationRecord
     validates_uniqueness_of :email, :on => :create
     has_secure_password
 
-        
-    validates :password, length: { in: 6..20 }
+    VALID_PASSWORD_REGEX = /\A(?=.*\d)(?=.*([a-z]|[A-Z]))([\x20-\x7E]){6,40}/x
+    validates :password, format: { with: VALID_PASSWORD_REGEX }
 
     validates_presence_of :password, :password_confirmation
     validates_confirmation_of :password
-    validates_presence_of :password_confirmation
-    
+
     def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
