@@ -43,6 +43,15 @@ When(/^I am on the Create New Reminder page$/) do
   visit ('reminders/new')
 end
 
+When(/^I am on the home page$/) do
+  visit ('pages/home')
+end
+
+When(/^I choose "Caregiver"$/) do
+  choose("Caregiver")
+end
+
+
 
 # Single-line step scoper
 When /^(.*) within (.*[^:])$/ do |step, parent|
