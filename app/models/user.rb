@@ -10,9 +10,17 @@ class User < ApplicationRecord
     validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
+    validates_length_of :email,
+        :maximum   => 255,
+        :tokenizer => lambda { |str| str.scan(/\w+/) },
+        :too_long  => "must have at most {{count}} characters"
+    validates_uniqueness_of :email, :on => :create
     has_secure_password
-    validates :password, presence: true, length: { minimum: 6 }
-    
+
+        
+    validates :password, length: { in: 6..20 }
+
+    validates_presence_of :password, :password_confirmation
     validates_confirmation_of :password
     validates_presence_of :password_confirmation
     
