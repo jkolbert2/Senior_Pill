@@ -16,8 +16,8 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
       
-    when "the Create New Reminder page" 
-      '/users/32/reminders/new'
+    when /loggedin/
+      'users/2/reminders/new'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
