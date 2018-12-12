@@ -17,7 +17,7 @@ module NavigationHelpers
       '/'
       
     when "the Create New Reminder page" 
-      '/users/2/reminders/new'
+      '/users/32/reminders/new'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
