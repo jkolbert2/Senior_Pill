@@ -18,13 +18,14 @@ Rails.application.routes.draw do
   
   root :to => redirect('pages/home')
   
+  #resource messages for contact form
   resource :messages do
     collection do
       post 'reply'
     end
   end
   
-  #route for contact form
+  #routes for contact form - used to send us emails
   get 'contact-me', to: 'messages#new', as: 'new_message'
   post 'contact-me', to: 'messages#create', as: 'create_message'
 
