@@ -87,7 +87,7 @@
        <% Reminder.all.each do |drug| %>                <%# For every reminder in db %>
          <% if drug.doctor == current_user.email %>    <%# if reminders doctor is current user %>
          <tr>
-            <td> <%= drug.name %> </td>
+            <td> <%= drug.users.Name %> </td>
             <td> <%= drug.Date %> </td>
             <td> <%= drug.Drug %> </td>
             <td> <%= drug.doctor %> </td>
