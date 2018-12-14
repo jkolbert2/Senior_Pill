@@ -17,7 +17,7 @@ class User < ApplicationRecord
     validates_uniqueness_of :email, :on => :create
     has_secure_password
 
-    VALID_PASSWORD_REGEX = /\A(?=.*\d)(?=.*([a-z]|[A-Z]))([\x20-\x7E]){6,40}/x
+    VALID_PASSWORD_REGEX = /\A{6,40}/x
     validates :password, length: { minimum: 6 }, format: { with: VALID_PASSWORD_REGEX }
 
     validates_presence_of :password, :password_confirmation
