@@ -5,13 +5,13 @@ Rails.application.routes.draw do
      resources :reminders
   end
   
-  get 'sessions#new'
-  get  '/signup',  to: 'users#new'
+  get 'sessions/new'
+  get  '/signup',  to: 'users#new', :as => "sign_up"
   get  '/edit',  to: 'users#edit'
   get "/pages/:page" => "pages#show"
-  get    '/login',   to: 'sessions#new'
+  get    '/login',   to: 'sessions#new', :as => "login"
   post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  delete '/logout',  to: 'sessions#destroy', :as => "logout"
   get '/send_reminder/:id', to: 'reminders#send_reminder', as: :send_reminder
   
   get '/reminders', to: 'reminders#new'
