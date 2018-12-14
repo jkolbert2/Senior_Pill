@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   end
   
   get 'sessions/new'
-  get  '/signup',  to: 'users#new', :as => "sign_up"
+  get  '/signup',  to: 'users#new'
   get  '/edit',  to: 'users#edit'
   get "/pages/:page" => "pages#show"
-  get    '/login',   to: 'sessions#new', :as => "login"
+  get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy', :as => "logout"
+  delete '/logout',  to: 'sessions#destroy'
   get '/send_reminder/:id', to: 'reminders#send_reminder', as: :send_reminder
   
   get '/reminders', to: 'reminders#new'
