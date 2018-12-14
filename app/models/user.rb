@@ -9,9 +9,19 @@ class User < ApplicationRecord
     validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
+    validates_length_of :email,
+        :maximum   => 255,
+        :tokenizer => lambda { |str| str.scan(/\w+/) },
+        :too_long  => "must have at most {{count}} characters"
+    validates_uniqueness_of :email, :on => :create
     has_secure_password
-    validates :password, presence: true, length: { minimum: 6 }
-    
+
+    VALID_PASSWORD_REGEX = /\A(?=.*\d)(?=.*([a-z]|[A-Z]))([\x20-\x7E]){6,40}/x
+    validates :password, length: { minimum: 6 }, format: { with: VALID_PASSWORD_REGEX }
+
+    validates_presence_of :password, :password_confirmation
+    validates_confirmation_of :password
+
     def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost

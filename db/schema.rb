@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 20181206192223) do
     t.index ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
   end
 
-
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
