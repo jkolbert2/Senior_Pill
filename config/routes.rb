@@ -5,7 +5,7 @@ Rails.application.routes.draw do
      resources :reminders
   end
   
-  get 'sessions/new'
+# get 'sessions/new'
   get  '/signup',  to: 'users#new'
   get  '/edit',  to: 'users#edit'
   get "/pages/:page" => "pages#show"
