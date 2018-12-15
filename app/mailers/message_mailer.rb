@@ -5,6 +5,6 @@ class MessageMailer < ApplicationMailer
     @body = message.body
     
       #email that messages send to
-    mail to: "caroline@example.org", from: message.email
+    mail to: "jfailla1@tulane.edu", from: message.email
   end
 end
