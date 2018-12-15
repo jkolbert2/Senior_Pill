@@ -13,15 +13,17 @@
   </div>
   <div class="col-6">
     <br>
-    <h3 class="text-center"> Your Current Pill Reminders</h3>
+      <h3 class="text-center"> Your Current Pill Reminders</h3>
     <br>
     <table class="table table-bordered text-center"> 
     <thead>
       <tr>
       <th> Date </th>
       <th> Drug </th>
+      <th> Doctor </th>
       <th> Purpose </th>
       <th> Amount </th>
+      <th> Status? </th>
       <th> Frequency </th>
       <th> Active </th>
       <th> View </th>
@@ -34,8 +36,14 @@
        <tr>
           <td> <%= drug.Date %> </td>
           <td> <%= drug.Drug %> </td>
+          <td> <%= drug.doctor %> </td>
           <td> <%= drug.Purpose %> </td>
           <td> <%= drug.Amount %> </td>
+          <% if current_user.admin? %>
+            <td> Patient </td>
+          <% else %>
+            <td> Caregiver</td>
+           <% end %>
           <td> <%= drug.frequency %> </td>
           <% if drug.Active? %>
           <td> <%= image_tag("lightbulbyellow.png", height: "20", width: "20") %></td>
@@ -51,6 +59,58 @@
     </table>
    <%= will_paginate @reminders, previous_label: h("<"), next_label: h(">") %>
   </div>
+  
+  <% if current_user.admin? %>                    <%# If doctor %>
   <div class="col-3"></div>
+    <table class="table table-bordered text-center"> 
+    YOUR PATIENT'S REMINDERS
+    <tbody>
+    <thead>
+      <tr>
+      <th> Patient Name</th>
+      <th> Date </th>
+      <th> Drug </th>
+      <th> Doctor </th>
+      <th> Purpose </th>
+      <th> Amount </th>
+      <th> Status? </th>
+      <th> Frequency </th>
+      <th> Active </th>
+      <th> View </th>
+      <th> Edit </th>
+      <th> New! </th>
+      </tr>
+    </thead>
+    <tbody>
+       <% Reminder.all.each do |drug| %>                <%# For every reminder in db %>
+         <% if drug.doctor == current_user.email %>    <%# if reminders doctor is current user %>
+         <tr>
+            <td> <%= drug.user_id %> </td>
+            <td> <%= drug.Date %> </td>
+            <td> <%= drug.Drug %> </td>
+            <td> <%= drug.doctor %> </td>
+            <td> <%= drug.Purpose %> </td>
+            <td> <%= drug.Amount %> </td>
+            <% if current_user.admin? %>
+              <td> Patient </td>
+            <% else %>
+              <td> Caregiver</td>
+             <% end %>
+            <td> <%= drug.frequency %> </td>
+            <% if drug.Active? %>
+              <td> <%= image_tag("lightbulbyellow.png", height: "20", width: "20") %></td>
+            <% else %>
+              <td> <%= image_tag("lightbulb.png", height: "20", width: "20") %></td>
+            <% end %>
+              <td> <%= link_to(image_tag("telescope.png", height: "20", width: "20"), user_reminder_path(@user, drug),class:"btn") %></td>
+              <td> <%= link_to(image_tag("pencil.png", height: "20", width: "20"), edit_user_reminder_path(@user, drug),class:"btn") %></td>
+            <td> <%=link_to('New+', new_user_reminder_path(drug.user_id), class:"btn btn-warning")  %></td>
+          </tr>
+          <%end%>   <%# end of if reminders doctor is current user loop %>
+          <%end%>  <%# end of every reminder loop %>
+      </tbody>
+    </table>
+    
+  <% end %>       <%# End of if doctor %>
 </div>
 </div>

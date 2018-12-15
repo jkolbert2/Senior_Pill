@@ -12,7 +12,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to Pill Project!"
+      if @user.admin == false
+        flash[:success] = "Welcome to Pill Project"
+      else
+        flash[:success] = "Welcome to Pill Project. You are now an Admin"
+      end
       redirect_to @user
     else
       render 'new'
@@ -21,6 +25,21 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+  end
+  
+  def edit
+    @user = User.find(params[:id])#params[:id])
+   # @user.push(newpatient_params);
+  #  redirect_to "/users/#{@user.id}"
+    #patientid = 
+    #@user.patientlist.push(patientid)
+  end
+  
+  def update
+        @user = User.find(params[:id]);
+        @Patients = @user.patientlist
+        @Patients.push(1)
+        redirect_to "/users/#{@user.id}"
   end
 
   def destroy
@@ -33,8 +52,11 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :admin, {:patientlist => []})
   end
   
+  def newpatient_params
+    params.require(:user).permit(:patientlist => [])
+  end
 end
 
