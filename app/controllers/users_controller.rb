@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    if current_user.admin == true
+      @users = User.all
+    else 
+      redirect_to "/pages/home"
+    end
   end
 
   def show
