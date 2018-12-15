@@ -15,10 +15,15 @@ class RemindersController < ApplicationController
         #redirect_to reminders_path
         @user = User.find(params[:user_id]);
         @reminder = @user.reminders.create(reminder_params);
-        flash[:success] = "Reminder Successfully Created!"
-        redirect_to "/users/#{@user.id}"
-        
+        if @reminder.save
+            flash[:success] = "Reminder Successfully Created!"
+            redirect_to "/users/#{@user.id}"
+        else
+            flash[:failure] = "Reminder not Successfully Created. Try Again!"
+            render 'new'
+        end
     end
+    
     def show
         @user = User.find(params[:user_id]);
         @reminder = @user.reminders.find(params[:id]);
