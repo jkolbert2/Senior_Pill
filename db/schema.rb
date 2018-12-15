@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181205034814) do
+ActiveRecord::Schema.define(version: 20181206192223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pages", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -41,6 +46,7 @@ ActiveRecord::Schema.define(version: 20181205034814) do
     t.integer  "user_id"
     t.string   "frequency"
     t.boolean  "Active"
+    t.string   "doctor"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -55,11 +61,11 @@ ActiveRecord::Schema.define(version: 20181205034814) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "password_digest"
-    t.string   "provider",        limit: 50,  default: "", null: false
-    t.string   "uid",             limit: 500, default: "", null: false
+    t.boolean  "admin",           default: false
+    t.integer  "patientlist",                                  array: true
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 

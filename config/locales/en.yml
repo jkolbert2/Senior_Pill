@@ -21,3 +21,15 @@
 
 en:
   hello: "Hello world"
+  
+  message_mailer:
+    contact_me:
+      subject: "Message from www.murdo.ch"
+      
+      
+  errors:
+    messages:
+      email: "Not an email address"
+      password: "Needs to be at least 6 characters or does not match"
+
+
