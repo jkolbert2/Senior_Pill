@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       flash[:success] = "Welcome Back to Pill Project!"
       redirect_to user
     else
-      flash[:danger] = 'Invalid email/password combination' # Not quite right!
+      flash[:failure] = 'Invalid email/password combination' # Not quite right!
       render 'new'
     end
   end
