@@ -11,6 +11,7 @@
         <%= link_to 'New Pill Reminder', new_user_reminder_path(current_user.id), class:"btn btn-warning" %>
       </h5>
   </div>
+  <% if current_user.id == @user.id %>   
   <div class="col-6">
     <br>
       <h3 class="text-center"> Your Current Pill Reminders</h3>
@@ -113,4 +114,13 @@
     
   <% end %>       <%# End of if doctor %>
 </div>
+  <% else %>
+  <div class="col-6">
+  <h1 class="text-center"> 
+  <br>
+  <br>
+  This is not your page ;)</h1>
+  </div>
+  <div class="col-3"></div>
+  <% end %>
 </div>
