@@ -19,7 +19,7 @@ class RemindersController < ApplicationController
             flash[:success] = "Reminder Successfully Created!"
             redirect_to "/users/#{@user.id}"
         else
-            flash[:failure] = "Reminder not successfully created"
+            flash[:failure] = "Reminder not Successfully Created. Try Again!"
             render 'new'
         end
     end
