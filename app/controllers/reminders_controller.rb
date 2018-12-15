@@ -63,4 +63,3 @@ class RemindersController < ApplicationController
         params.require(:reminder).permit(:Date,:Drug,:Amount,:Purpose,:Email,:frequency,:Active,:user_id)
     end
 end
-c
